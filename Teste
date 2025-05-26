@@ -2,7 +2,7 @@
 
 #include <stdlib.h>
 
-#define TAM 5
+#define TAM 10
 
 void push (int pilha[], int *max, int valor){
 
