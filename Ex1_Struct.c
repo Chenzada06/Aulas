@@ -14,7 +14,7 @@ typedef struct
 
 // Função push 
 void push(pilha*p, int valor){
-    if(p-> topo = TAM - 1){
+    if(p-> topo >= TAM - 1){
         printf("Pilha cheia!\n");
     }
     else {
@@ -55,7 +55,7 @@ void imprimir(pilha*p){
 
 int main(){
     pilha pilha;
-    int topo = -1;
+    pilha.topo = -1;
     int valor, opcao;
 
     do{        
