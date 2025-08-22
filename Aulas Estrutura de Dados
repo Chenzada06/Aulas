@@ -1,0 +1,32 @@
+//exemplo 1 : Usando a biblioteca <stack>
+
+#include <iostream>
+
+#include <stack> //lib para utilizar a estrutuda de dados stack (pilha)
+
+using namespace std;
+
+int main()
+{
+    stack<int>pilha; //Declaração de uma pilha de inteiros 
+    
+    // inserção de elementos na pilja (operação push)
+    pilha.push(10); // insere o numero 10 na pilha.
+    cout << pilha.top() << endl;
+    pilha.push(20);
+    cout << pilha.top() << endl;
+    pilha.push(30);
+    cout << pilha.top() << endl;
+    
+    //exibe e remove os elementos da pilha enquanto ela nao estiver vazia
+    while(!pilha.empty())
+    {
+        cout << "Topo: " << pilha.top() << endl;
+        pilha.pop();
+        
+    }
+    
+    
+
+    return 0;
+}
