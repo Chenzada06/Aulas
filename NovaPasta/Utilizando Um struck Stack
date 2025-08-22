@@ -1,0 +1,85 @@
+//exemplo 1 : Usando a biblioteca <stack>
+
+#include <iostream>
+
+#define MAX 100 // MAX é uma constante que representa o tamanho max da pilha  
+
+using namespace std;
+
+struct Stack{
+    
+    int arr[MAX]; // array de tamanho MAX para armazenar os elementos da pilha
+    int top; // vamos guardar o indice do elemento do topo da pilha
+    
+    //construtor da classe stack que inicializa um pilha vazia
+    Stack(){
+        top = -1; // -1 indica que a pilha esta vazia
+    }
+    
+    bool isEmpty(){
+        
+        return top == -1; // retorna true se o top  for -1, no caso a pilha esta vazia
+    }
+    bool isFull(){
+        
+        return top == MAX -1; // retorna true se o top for MAX -1, entao 99 (0 - 99)
+    }
+    
+    void push(int value){
+        if(isFull){
+            
+            cout << "Pilha cheia, nao da mais " << endl;
+        }
+        else{
+            // incrementa o indice do top e armazena o valor no novo topo array
+            arr[++top] = value;
+            cout << "Elemento " << value << " adicionado na pilha." << endl ;
+        }
+    }
+    //metodo para remover e retornar o elemento do topo da pilha (operacao pop)
+    int pop(){
+        if (isEmpty){
+            cout << "Pilha vazia, nao ha o que remover." << endl;
+        
+            return -1;
+            
+        }
+        else {
+            return arr[top--];
+        }
+        
+    }
+    
+    //metodo para retornar o elemento do topo sem remove-lo (operação peek)
+    int peek(){
+        if (isEmpty){
+            cout << "PIlha vazia" << endl;
+        }
+        else {
+            // retorna o valor que esta no topo da array sem modificar o indice top
+            
+            return arr[top];
+        }
+    }
+};
+
+int main()
+{
+    Stack pilha;
+    
+    pilha.push (10);
+    cout << pilha.peek() << endl;
+    pilha.push (20);
+    cout << pilha.peek() << endl;
+    pilha.push (30);
+    cout << pilha.peek() << endl;
+    
+    while(!pilha.isEmpty()){
+        cout << pilha.peek() << endl
+        pilha.pop();
+        
+    }
+    
+
+    return 0;
+}
